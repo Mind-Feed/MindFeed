@@ -1,4 +1,0 @@
-from YouTube_API import run_youtube_search_app
-from kenspotifyapi import authenticate_spotify
-run_youtube_search_app()
-authenticate_spotify()
