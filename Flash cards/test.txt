@@ -1,0 +1,55 @@
+public class exercise05 
+{
+	public static void main(String[] args) {
+		LocalDateTime now = LocalDateTime.now();
+		String[] month= {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+        String mnt = String.format("%1$tm",now);
+        int mm = Integer.parseInt(mnt);
+		String title = String.format("%19s%s", "","HOSTCENTRIC COMPANY\n");
+		String title2 = String.format("%22s%s%n",  "","SALARY REPORT");
+		String title3 = String.format("%26s%s%n",  "","AS OF");
+		String yearFormatted = String.format("%1$tY",now);
+		String date = String.format("%33s%n%n%n", "" + month[mm-1] + " " + yearFormatted);
+		String subtitle = String.format("%15s%11s%18s%16s%14s%n%n", "Employee Number","Name","Hours Worked","Rate Per Hour","Gross Pay");
+		String path = "empfile.csv";
+		String[] values = null;
+		double total=0;
+		try {
+			BufferedWriter writer =  new BufferedWriter(new FileWriter("salaryfile.rtf"));
+			writer.write(title + title2 + title3+date);
+			writer.write(subtitle);
+			try 
+			{
+				BufferedReader reader = new BufferedReader(new FileReader(path));
+				String line="";
+				while ((line=reader.readLine()) != null)
+				{
+					values = line.split(",");
+					//%[parameter]_index$}[flags][width][.precision]conversion_target
+					String detail = String.format("%5s%22s %16d  %,14.2f %,13.2f %n", 
+					values[0],
+					values[1], 
+					Integer.parseInt(values[2]),
+					Double.parseDouble(values[3]),
+					Integer.parseInt(values[2]) * Double.parseDouble(values[3]));
+					System.out.print(detail);
+					writer.write(detail);
+					total += Integer.parseInt(values[2]) * Double.parseDouble(values[3]);			
+				}
+				reader.close();
+			} 
+			catch (IOException e) 
+			{
+				System.out.println("something's wrong");
+			}
+				String grandTotal = String.format("%n %58s %,14.2f","Grand Total:",total);
+				System.out.println(grandTotal);
+				writer.write(grandTotal);
+				writer.close();
+		} 
+		catch (IOException e1) 
+		{
+			System.out.println("Full storage");
+		}
+	}
+}
