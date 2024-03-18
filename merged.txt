@@ -8,11 +8,11 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # YouTube API key
-YOUTUBE_API_KEY = 'AIzaSyCJrBa4FuRoZ7j4rOiPS5VRPHEQPK7NLHQ'
+YOUTUBE_API_KEY = ''
 
 # Spotify API credentials
-CLIENT_ID = '3dbfa5b09ce546448990687751ad470e'
-CLIENT_SECRET = '142444ed089049a6bed24c4000c74708'
+CLIENT_ID = ''
+CLIENT_SECRET = ''
 REDIRECT_URI = 'http://localhost:5000/callback'
 SPOTIFY_API_URL = 'https://api.spotify.com/v1/'
 
