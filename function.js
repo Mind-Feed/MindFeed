@@ -1,3 +1,14 @@
-let title = document.querySelector('.random');  // Select the element with the class 'random'
-let randomNumber = Math.floor(Math.random() * 10) + 1;  // Generate a random number between 1 and 10
-title.textContent = randomNumber;  // Set the text content of the selected element to the random number
+
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+document.title = randomNumber;
+
+document.getElementById("cards").onmousemove = e => {
+    for (const card of document.getElementsByClassName("card")) {
+        const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+    }
+}

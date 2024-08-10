@@ -1,0 +1,56 @@
+#cardshover {
+  background-color: #1f1f1f;
+  max-width: 700px;
+  aspect-ratio: 16/8.3;
+  overflow: hidden;
+  border-radius: 4px;
+}
+#cardshover #cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin: 10px;
+  gap: 8px;
+}
+#cardshover #cards:hover > .card > .card-border {
+  opacity: 1;
+}
+#cardshover #cards .card {
+  background-color: rgba(255, 255, 255, 0.01);
+  position: relative;
+  aspect-ratio: 12/9;
+  border-radius: 4px;
+}
+#cardshover #cards .card:hover::before {
+  opacity: 1;
+}
+#cardshover #cards .card::before,
+#cardshover #cards .card > .card-border {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 500ms;
+  width: 100%;
+  z-index: 2;
+}
+#cardshover #cards .card::before {
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.04), transparent 40%);
+  z-index: 3;
+}
+#cardshover #cards .card > .card-border {
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.23), transparent 40%);
+  z-index: 1;
+}
+#cardshover #cards .card > .card-content {
+  background-color: rgb(23, 23, 23);
+  border-radius: inherit;
+  height: calc(100% - 1px);
+  margin: 1px;
+  position: relative;
+  width: calc(100% - 2px);
+  z-index: 2;
+}/*# sourceMappingURL=cardsHover.css.map */
