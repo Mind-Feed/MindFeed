@@ -6,3 +6,4 @@
 White,Shiro
 Youth,Seishun
 Suki,Like
+namae,name

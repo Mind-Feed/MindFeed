@@ -4,9 +4,7 @@ def Add():
     question = input( "name: " )
     answer = input( "means: " )
     file.write( f"{question},{answer}\n" )
-    exit()
-    create.close()
-
+    main(choose)
 def View():
     with open('Flash cards/cards.txt', 'r') as file:
         line_count = 0
@@ -21,13 +19,13 @@ def View():
             line_count += 1
             if line_count % 2 == 0:
                 if input().lower() == 'q':
-                    break
-
+                    main(choose)
 choose = int(input("Flash Cards Reviewer\n[1] Test\n[2] Add\n[3] View\n[4] Exit\n"))
 
-while True:
+def main(choose):
   if choose == 1:
-    print("Under maintinance")
+    print("Under maintenance")
+    exit()
   elif choose == 2:
     Add()
   elif choose == 3:
@@ -35,4 +33,6 @@ while True:
     choose = int(input("[1] Test\n[2] Add\n[3] View\n[4] Exit\n"))
   elif choose == 4:
     exit()
+
+main(choose)
     
