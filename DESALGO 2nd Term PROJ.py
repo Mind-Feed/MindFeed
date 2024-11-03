@@ -183,7 +183,6 @@ def demonstrate_profile_manager():
 
     except Exception as error:
         print("Error:", str(error))
-
-# Run the demonstration
+        
 if __name__ == "__main__":
-    demonstrate_profile_manager()
+    demonstrate_profile_manager()   
