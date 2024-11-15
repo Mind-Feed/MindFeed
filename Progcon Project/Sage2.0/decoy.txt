@@ -1,0 +1,4 @@
+johndoe|work|#FFFFFF|14|120||
+janedoe|school|#E8F5E9|16|110|canvas.edu,scholar.google.com,research.net|gmail:jane.academic@gmail.com
+alicew|business|#E3F2FD|12|90|linkedin.com,salesforce.com,tableau.com|gmail:alice.business@gmail.com,slack:alice@company.com
+jk-acc|default|#FFFFFF|14|100||
