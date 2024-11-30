@@ -69,7 +69,7 @@ for Org in Org:
     print()
 new_entry = ("CS", 2941)
 
-"""insert(new_entry, new_hash_Tb)"""
+
 
 #print(new_hash_Tb)
 
